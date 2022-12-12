@@ -251,7 +251,7 @@
   .fr-view a.fr-strong {
     font-weight: 700; }
   .fr-view a.fr-green {
-    color: green; }
+    color: rgb(2, 3, 2); }
   .fr-view .fr-img-caption {
     text-align: center; }
     .fr-view .fr-img-caption .fr-img-wrap {
@@ -360,7 +360,7 @@ span.fr-img-caption.fr-view {
       float: right;
       margin: 5px 0 5px 5px;
       max-width: calc(100% - 5px); }
-/*end-commonstyles library*/@charset "UTF-8";
+/*end-commonstyles library*/@charSet "UTF-8";
 .u-hidden-block {
   visibility: hidden!important;
 }
@@ -1873,12 +1873,12 @@ a {
   margin-right: 10px;
 }
 .u-form-horizontal .u-form-group:not(.u-label-top) .u-input {
-  display: flex;
-  width: 0;
-  vertical-align: middle;
-  flex-grow: 1;
-  flex-shrink: 1;
-  min-width: 0px;
+  display: block;
+  width: 20px;
+  flex-grow: 10;
+  flex-shrink: 10;
+  min-width: 200px;
+ 
 }
 .u-label-none:not(.u-form-agree):not(.u-form-checkbox) > label {
   display: none !important;
@@ -38422,88 +38422,6 @@ a.u-link.u-text-hover-grey-90:hover {
         {
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         --theme-sheet-width-xl: 1140px;
         --theme-sheet-width-lg: 940px;
         --theme-sheet-width-md: 720px;
@@ -38801,7 +38719,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-header .u-text-1 {
   font-weight: 700;
-  margin: 12px auto 20px -110px;
+  margin: 12px auto 20px 110px;
 }
 
 
@@ -38837,5 +38755,5 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
  /*begin-variables base-font-size*/ 
- html { font-size: 16px; }
+ html { font-size: 15px; }
  /*end-variables base-font-size*/
