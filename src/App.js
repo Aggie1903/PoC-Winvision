@@ -1204,7 +1204,7 @@ function App() {
                   </h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-8">
                     Bugün yetmiş avroya alışveriş yaptım ve yirmi avroya
-                    yedim. Bugün ne kadar harcadım?
+                    yedim. Bugün ne kadar harcadım?.
                   </p>
                   <button
                     className="btn btn-warning"
