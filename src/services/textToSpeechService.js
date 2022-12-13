@@ -7,7 +7,7 @@ export class TextToSpeechService {
         const audioConfig = AudioConfig.fromSpeakerOutput();
 
         // The language of the voice that speaks.
-        speechConfig.speechSynthesisVoiceName = "en-US-JennyNeural";
+        speechConfig.speechSynthesisVoiceName = "nl-NL-FennaNeural";
 
         // Create the speech synthesizer.
         let synthesizer = new SpeechSynthesizer(speechConfig, audioConfig);
@@ -21,8 +21,8 @@ export class TextToSpeechService {
                 } else {
                     console.error(
                         "Speech synthesis canceled, " +
-                            result.errorDetails +
-                            "\nDid you set the speech resource key and region values?"
+                        result.errorDetails +
+                        "\nDid you set the speech resource key and region values?"
                     );
                 }
                 synthesizer.close();

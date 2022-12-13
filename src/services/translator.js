@@ -42,7 +42,7 @@ export class Translator {
                 captions.languages[langCode] = caption;
             }
 
-            this.callback(new TranslatedResult(result.text, captions));
+            this.callback(new TranslatedResult(result.text, captions, options.question));
         };
 
         this.recognizer.startContinuousRecognitionAsync();
