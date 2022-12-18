@@ -27,8 +27,6 @@ function App() {
     if (translatedResult.question === 5) {
       setquestion5stt(translatedResult.original);
     }
-
-
   };
 
   const [translator] = useState(new Translator(processResults));
@@ -70,19 +68,23 @@ function App() {
   };
 
   // ALL Questions
-  const question1 = "Vandaag liep ik door de stad en ontmoette ik twee mensen. De één had vijf zakken snoep en de ander twintig. Deze lieve mensen waren zo gul dat ze me alle snoepzakjes gaven. Hoeveel zakken snoep heb ik gekregen?"
-  const question2 = "Ik ben een muzikant en ik heb gisteren tien euro verdiend. En vandaag heb ik honderd euro verdiend. Hoeveel euro heb ik in totaal verdiend?"
-  const question3 = "Mijn hypotheek deze maand is vijftig euro. Hoeveel kost een hypotheek van twee maanden mij?"
-  const question4 = "Ik ga vandaag met mijn vriendin naar het museum. De prijs van een kaartje is twintig euro. Ik betaal voor alle kaartjes. Hoeveel gaat mij dit kosten?"
-  const question5 = "Vandaag heb ik voor zeventig euro gewinkeld en voor twintig euro gegeten. Hoeveel heb ik vandaag uitgegeven?"
-
+  const question1 =
+    "Vandaag liep ik door de stad en ontmoette ik twee mensen. De één had vijf zakken snoep en de ander twintig. Deze lieve mensen waren zo gul dat ze me alle snoepzakjes gaven. Hoeveel zakken snoep heb ik gekregen?";
+  const question2 =
+    "Ik ben een muzikant en ik heb gisteren tien euro verdiend. En vandaag heb ik honderd euro verdiend. Hoeveel euro heb ik in totaal verdiend?";
+  const question3 =
+    "Mijn hypotheek deze maand is vijftig euro. Hoeveel kost een hypotheek van twee maanden mij?";
+  const question4 =
+    "Ik ga vandaag met mijn vriendin naar het museum. De prijs van een kaartje is twintig euro. Ik betaal voor alle kaartjes. Hoeveel gaat mij dit kosten?";
+  const question5 =
+    "Vandaag heb ik voor zeventig euro gewinkeld en voor twintig euro gegeten. Hoeveel heb ik vandaag uitgegeven?";
 
   // View UI
   return (
     <div className="App">
       {/* Home Page */}
       <>
-        <div className={pageState === 0 ? '' : 'd-none'}>
+        <div className={pageState === 0 ? "" : "d-none"}>
           <header
             className="u-clearfix u-custom-color-2 u-header u-header"
             id="sec-776e"
@@ -127,7 +129,7 @@ function App() {
 
       {/* Versie 1 */}
       <>
-        <div className={pageState === 1 ? '' : 'd-none'}>
+        <div className={pageState === 1 ? "" : "d-none"}>
           <div>
             <link rel="stylesheet" href="Timer.css" />
             <header
@@ -157,14 +159,19 @@ function App() {
                       </h3>
                       <p className="u-large-text u-text u-text-default u-text-variant u-text-4">
                         Hoje eu estava andando pela cidade e encontrei duas
-                        pessoas. Um tinha cem euros e o outro tinha vinte
-                        euros. Essas pessoas adoráveis ​foram tão generosas
-                        que me deram todo o dinheiro. Quantos euros recebi?
+                        pessoas. Um tinha cem euros e o outro tinha vinte euros.
+                        Essas pessoas adoráveis ​foram tão generosas que me
+                        deram todo o dinheiro. Quantos euros recebi?
                       </p>
 
-                      <button onClick={() => { startListening(1); }}>Start STT</button>
+                      <button
+                        onClick={() => {
+                          startListening(1);
+                        }}
+                      >
+                        Start STT
+                      </button>
                       <button onClick={() => stopListening()}>Stop STT</button>
-
                     </div>
                   </div>
                   <div className="u-form u-form-1">
@@ -203,8 +210,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -228,9 +235,9 @@ function App() {
                         Opdracht 2
                       </h3>
                       <p className="u-large-text u-text u-text-default u-text-variant u-text-7">
-                        Je suis musicien et j'ai gagné cinquante euros hier.
-                        Et aujourd'hui j'en ai fait cent. Combien d'euros
-                        ai-je gagné ?
+                        Je suis musicien et j'ai gagné cinquante euros hier. Et
+                        aujourd'hui j'en ai fait cent. Combien d'euros ai-je
+                        gagné ?
                       </p>
                     </div>
                   </div>
@@ -272,8 +279,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -298,9 +305,6 @@ function App() {
                 id="sec-3495"
               >
                 <div className="u-clearfix u-sheet u-sheet-1">
-
-
-
                   <h5 className="u-text u-text-1">
                     Vind het antwoord in de tekst hiernaast en klik daarna op
                     indienen.
@@ -354,8 +358,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -424,8 +428,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -447,8 +451,8 @@ function App() {
                       <p className="u-large-text u-text u-text-default u-text-variant u-text-8">
                         Hoje eu estava andando pela cidade e encontrei duas
                         pessoas. Um tinha dez euros e o outro também tinha dez
-                        euros. Essas pessoas adoráveis ​​foram tão generosas
-                        que me deram todo o dinheiro. Quantos euros recebi?
+                        euros. Essas pessoas adoráveis ​​foram tão generosas que
+                        me deram todo o dinheiro. Quantos euros recebi?
                       </p>
                     </div>
                   </div>
@@ -490,8 +494,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -554,8 +558,8 @@ function App() {
                             Thank you! Your message has been sent.
                           </div>
                           <div className="u-form-send-error u-form-send-message">
-                            Unable to send your message. Please fix errors
-                            then try again.
+                            Unable to send your message. Please fix errors then
+                            try again.
                           </div>
                           <input
                             type="hidden"
@@ -572,8 +576,8 @@ function App() {
                     </div>
                   </div>
                   <h5 className="u-text u-text-11">
-                    Zorg dat de tekst die je op het A4-tje hebt gekregen in
-                    het vak links komt te staan en klik op ‘Indienen'
+                    Zorg dat de tekst die je op het A4-tje hebt gekregen in het
+                    vak links komt te staan en klik op ‘Indienen'
                   </h5>
                   <div className="u-container-style u-custom-color-3 u-group u-group-5">
                     <div className="u-container-layout u-container-layout-5">
@@ -582,10 +586,10 @@ function App() {
                       </h3>
                       <p className="u-large-text u-text u-text-default u-text-variant u-text-13">
                         Vanavond zal het ook in Limburg overgaan op lichte
-                        regen, net als in de rest van het land. Vannacht zou
-                        het overwegend droog moeten worden, al zullen de
-                        kustprovincies rekening moeten houden met wat
-                        motregen. In het zuidoosten kan mist ontstaan.
+                        regen, net als in de rest van het land. Vannacht zou het
+                        overwegend droog moeten worden, al zullen de
+                        kustprovincies rekening moeten houden met wat motregen.
+                        In het zuidoosten kan mist ontstaan.
                       </p>
                     </div>
                   </div>
@@ -627,8 +631,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -644,8 +648,7 @@ function App() {
                   </div>
                   <h5 className="u-text u-text-14">
                     Vertaal de tekst hier links naar het Turks en voer de
-                    vertaalde tekst hieronder in. Klik vervolgens op
-                    'indienen'.
+                    vertaalde tekst hieronder in. Klik vervolgens op 'indienen'.
                   </h5>
                   <div className="u-container-style u-custom-color-3 u-group u-group-6">
                     <div className="u-container-layout u-container-layout-6">
@@ -653,17 +656,16 @@ function App() {
                         Opdracht 8
                       </h3>
                       <p className="u-large-text u-text u-text-default u-text-variant u-text-16">
-                        Het&nbsp;WK 2022&nbsp;in Qatar wordt het 22e WK
-                        voetbal ooit en het eerste kampioenschap in het
-                        Midden-Oosten. Dit is de meest volledige website over
-                        het FIFA Wereldkampioenschap voetbal 2022 in Qatar.
+                        Het&nbsp;WK 2022&nbsp;in Qatar wordt het 22e WK voetbal
+                        ooit en het eerste kampioenschap in het Midden-Oosten.
+                        Dit is de meest volledige website over het FIFA
+                        Wereldkampioenschap voetbal 2022 in Qatar.
                       </p>
                     </div>
                   </div>
                   <h5 className="u-text u-text-17">
                     Vertaal de tekst hier links naar het Turks en voer de
-                    vertaalde tekst hieronder in. Klik vervolgens op
-                    'indienen'.
+                    vertaalde tekst hieronder in. Klik vervolgens op 'indienen'.
                   </h5>
                   <div className="u-form u-form-6">
                     <form
@@ -703,8 +705,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -724,17 +726,16 @@ function App() {
                         Opdracht 9
                       </h3>
                       <p className="u-large-text u-text u-text-default u-text-variant u-text-19">
-                        Aan het WK nemen 32 landen deel, namelijk gastland
-                        Qatar en 31 landen die zich kwalificeren via de
-                        voorronden. Deze landen worden in groepen geplaatst
-                        voor het eindtoernooi in Qatar.
+                        Aan het WK nemen 32 landen deel, namelijk gastland Qatar
+                        en 31 landen die zich kwalificeren via de voorronden.
+                        Deze landen worden in groepen geplaatst voor het
+                        eindtoernooi in Qatar.
                       </p>
                     </div>
                   </div>
                   <h5 className="u-text u-text-20">
                     Vertaal de tekst hier links naar het Roemeens en voer de
-                    vertaalde tekst hieronder in. Klik vervolgens op
-                    'indienen'.
+                    vertaalde tekst hieronder in. Klik vervolgens op 'indienen'.
                   </h5>
                   <div className="u-form u-form-7">
                     <form
@@ -774,8 +775,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -803,8 +804,7 @@ function App() {
                   </div>
                   <h5 className="u-text u-text-23">
                     Vertaal de tekst hier links naar het Spaans en voer de
-                    vertaalde tekst hieronder in. Klik vervolgens op
-                    'indienen'.
+                    vertaalde tekst hieronder in. Klik vervolgens op 'indienen'.
                   </h5>
                   <div className="u-form u-form-8">
                     <form
@@ -844,8 +844,8 @@ function App() {
                         Thank you! Your message has been sent.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -876,15 +876,15 @@ function App() {
         </div>
       </>
 
-
       {/* Versie 2 */}
       <>
-        <div className={pageState === 2 ? '' : 'd-none'}>
+        <div className={pageState === 2 ? "" : "d-none"}>
           <link rel="stylesheet" href="Timer.css" />
           <header
             className="u-clearfix u-custom-color-2 u-header u-header"
             id="sec-776e"
           >
+            {/* Opdracht 1 */}
             <div className="u-clearfix u-sheet u-sheet-1">
               <h2 className="u-subtitle u-text u-text-default u-text-1">
                 Winvision User Test
@@ -902,24 +902,23 @@ function App() {
               </h5>
               <div className="u-container-style u-custom-color-3 u-group u-group-1">
                 <div className="u-container-layout u-container-layout-1">
-                  <h3 className="u-text u-text-default u-text-3">
-                    Opdracht 1
-                  </h3>
+                  <h3 className="u-text u-text-default u-text-3">Opdracht 1</h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-4">
-                    Hoje eu estava andando pela cidade e encontrei duas
-                    pessoas. Uma tinha cinco saquinhos de balas e a outra
-                    vinte. Essas pessoas adoráveis ​​foram tão generosas que
-                    me deram todos os sacos de doces. Quantos sacos de doces
-                    recebi?
+                    Hoje eu estava andando pela cidade e encontrei duas pessoas.
+                    Uma tinha cinco saquinhos de balas e a outra vinte. Essas
+                    pessoas adoráveis ​​foram tão generosas que me deram todos
+                    os sacos de doces. Quantos sacos de doces recebi?
                   </p>
                   <button
                     className="btn btn-warning"
-                    onClick={() => startTextToSpeech(question1)}>T.T.S.</button>
+                    onClick={() => startTextToSpeech(question1)}
+                  >
+                    T.T.S.
+                  </button>
                   {/* <button onClick={() => {
                     startListening(1);
                   }}>Start STT</button>
                   <button onClick={() => stopListening()}>Stop STT</button> */}
-
                 </div>
               </div>
               <div className="u-form u-form-1">
@@ -940,8 +939,7 @@ function App() {
                       className="u-custom-color-3 u-input u-input-rectangle u-input-1"
                       required="required"
                       defaultValue={""}
-                    // value={question1stt}
-
+                      // value={question1stt}
                     />
                   </div>
                   <div className="u-form-group u-form-submit u-label-none">
@@ -964,11 +962,7 @@ function App() {
                   <div className="u-form-send-error u-form-send-message">
                     Mislukt!
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -976,23 +970,25 @@ function App() {
                   />
                 </form>
               </div>
+
+              {/* Opdracht 2 */}
               <h5 className="u-text u-text-5">
                 Vind het antwoord in de tekst hiernaast en klik daarna op
                 indienen.
               </h5>
               <div className="u-container-style u-custom-color-3 u-group u-group-2">
                 <div className="u-container-layout u-container-layout-2">
-                  <h3 className="u-text u-text-default u-text-6">
-                    Opdracht 2
-                  </h3>
+                  <h3 className="u-text u-text-default u-text-6">Opdracht 2</h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-7">
                     Je suis musicien et j'ai gagné dix euros hier. Et
-                    aujourd'hui j'en ai fait cent. Combien d'euros ai-je gagné
-                    ?
+                    aujourd'hui j'en ai fait cent. Combien d'euros ai-je gagné ?
                   </p>
                   <button
                     className="btn btn-warning"
-                    onClick={() => startTextToSpeech(question2)}>T.T.S.</button>
+                    onClick={() => startTextToSpeech(question2)}
+                  >
+                    T.T.S.
+                  </button>
                 </div>
               </div>
               <div className="u-form u-form-2">
@@ -1035,11 +1031,7 @@ function App() {
                   <div className="u-form-send-error u-form-send-message">
                     Mislukt!
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -1052,6 +1044,7 @@ function App() {
           <br></br>
           <br></br>
           <br></br>
+          {/* Opdracht 3 */}
           <section
             className="u-align-center u-clearfix u-section-2"
             id="sec-3dbf"
@@ -1063,16 +1056,17 @@ function App() {
               </h5>
               <div className="u-container-style u-custom-color-3 u-group u-group-1">
                 <div className="u-container-layout u-container-layout-1">
-                  <h3 className="u-text u-text-default u-text-2">
-                    Opdracht 3
-                  </h3>
+                  <h3 className="u-text u-text-default u-text-2">Opdracht 3</h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-3">
                     Το στεγαστικό μου αυτό το μήνα είναι πενήντα ευρώ. Πόσο θα
                     μου κοστίσει μια δίμηνη υποθήκη;
                   </p>
                   <button
                     className="btn btn-warning"
-                    onClick={() => startTextToSpeech(question3)}>T.T.S.</button>
+                    onClick={() => startTextToSpeech(question3)}
+                  >
+                    T.T.S.
+                  </button>
                 </div>
               </div>
               <div className="u-form u-form-1">
@@ -1115,11 +1109,7 @@ function App() {
                   <div className="u-form-send-error u-form-send-message">
                     Mislukt!
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -1127,22 +1117,26 @@ function App() {
                   />
                 </form>
               </div>
+
+              {/* Opdracht 4 */}
               <h5 className="u-text u-text-4">
                 Vind het antwoord in de tekst hiernaast en klik daarna op
                 indienen.
               </h5>
               <div className="u-container-style u-custom-color-3 u-group u-group-2">
                 <div className="u-container-layout u-container-layout-2">
-                  <h3 className="u-text u-text-default u-text-5">
-                    Opdracht 4
-                  </h3>
+                  <h3 className="u-text u-text-default u-text-5">Opdracht 4</h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-6">
                     Bugün kız arkadaşımla müzeye gideceğim. Bir biletin fiyatı
-                    yirmi avro. Biletleri ödüyorum. Bu bana ne kadara mal olacak?
+                    yirmi avro. Biletleri ödüyorum. Bu bana ne kadara mal
+                    olacak?
                   </p>
                   <button
                     className="btn btn-warning"
-                    onClick={() => startTextToSpeech(question4)}>T.T.S.</button>
+                    onClick={() => startTextToSpeech(question4)}
+                  >
+                    T.T.S.
+                  </button>
                 </div>
               </div>
               <div className="u-form u-form-2">
@@ -1185,11 +1179,7 @@ function App() {
                   <div className="u-form-send-error u-form-send-message">
                     Mislukt!
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -1197,18 +1187,21 @@ function App() {
                   />
                 </form>
               </div>
+
+              {/* Opdracht 5 */}
               <div className="u-container-style u-custom-color-3 u-group u-group-3">
                 <div className="u-container-layout u-container-layout-3">
-                  <h3 className="u-text u-text-default u-text-7">
-                    Opdracht 5
-                  </h3>
+                  <h3 className="u-text u-text-default u-text-7">Opdracht 5</h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-8">
-                    Bugün yetmiş avroya alışveriş yaptım ve yirmi avroya
-                    yedim. Bugün ne kadar harcadım?.
+                    Bugün yetmiş avroya alışveriş yaptım ve yirmi avroya yedim.
+                    Bugün ne kadar harcadım?.
                   </p>
                   <button
                     className="btn btn-warning"
-                    onClick={() => startTextToSpeech(question5)}>T.T.S.</button>
+                    onClick={() => startTextToSpeech(question5)}
+                  >
+                    T.T.S.
+                  </button>
                 </div>
               </div>
               <div className="u-form u-form-3">
@@ -1251,11 +1244,7 @@ function App() {
                   <div className="u-form-send-error u-form-send-message">
                     Mislukt!
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -1263,6 +1252,8 @@ function App() {
                   />
                 </form>
               </div>
+
+              {/* Opdracht 6 */}
               <h5 className="u-text u-text-9">
                 Vind het antwoord in de tekst hiernaast en
                 <span style={{ fontWeight: 700 }}>klik </span>daarna op
@@ -1276,10 +1267,18 @@ function App() {
                   <br></br>
                   <button
                     className="btn btn-primary"
-                    onClick={() => { startListening(1); }}>Start S.T.T.</button>
+                    onClick={() => {
+                      startListening(1);
+                    }}
+                  >
+                    Start S.T.T.
+                  </button>
                   <button
                     className="btn btn-danger"
-                    onClick={() => stopListening()}>Stop S.T.T.</button>
+                    onClick={() => stopListening()}
+                  >
+                    Stop S.T.T.
+                  </button>
                   <div className="u-form u-form-4">
                     <form
                       action="https://forms.nicepagesrv.com/Form/Process"
@@ -1321,8 +1320,8 @@ function App() {
                         Dankjewel! Je antwoord is verstuurd.
                       </div>
                       <div className="u-form-send-error u-form-send-message">
-                        Unable to send your message. Please fix errors then
-                        try again.
+                        Unable to send your message. Please fix errors then try
+                        again.
                       </div>
                       <input
                         type="hidden"
@@ -1338,9 +1337,11 @@ function App() {
                   </div>
                 </div>
               </div>
+
+              {/* Opdracht 7 */}
               <h5 className="u-text u-text-11">
-                Zorg dat de tekst die je op het A4-tje hebt gekregen in het
-                vak links komt te staan en klik op ‘Indienen'
+                Zorg dat de tekst die je op het A4-tje hebt gekregen in het vak
+                links komt te staan en klik op ‘Indienen'
               </h5>
               <div className="u-container-style u-custom-color-3 u-group u-group-5">
                 <div className="u-container-layout u-container-layout-5">
@@ -1349,17 +1350,25 @@ function App() {
                   </h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-13">
                     Vanavond zal het ook in Limburg overgaan op lichte regen,
-                    net als in de rest van het land. Vannacht zou het
-                    overwegend droog moeten worden, al zullen de
-                    kustprovincies rekening moeten houden met wat motregen. In
-                    het zuidoosten kan mist ontstaan.
+                    net als in de rest van het land. Vannacht zou het overwegend
+                    droog moeten worden, al zullen de kustprovincies rekening
+                    moeten houden met wat motregen. In het zuidoosten kan mist
+                    ontstaan.
                   </p>
                   <button
                     className="btn btn-primary"
-                    onClick={() => { startListening(1); }}>Start S.T.T.</button>
+                    onClick={() => {
+                      startListening(2);
+                    }}
+                  >
+                    Start S.T.T.
+                  </button>
                   <button
                     className="btn btn-danger"
-                    onClick={() => stopListening()}>Stop S.T.T.</button>
+                    onClick={() => stopListening()}
+                  >
+                    Stop S.T.T.
+                  </button>
                 </div>
               </div>
               <div className="u-form u-form-5">
@@ -1380,7 +1389,7 @@ function App() {
                       className="u-custom-color-3 u-input u-input-rectangle u-input-5"
                       required="required"
                       defaultValue={""}
-                      value={question1stt}
+                      value={question2stt}
                     />
                   </div>
                   <div className="u-form-group u-form-submit u-label-none">
@@ -1404,11 +1413,7 @@ function App() {
                     Unable to send your message. Please fix errors then try
                     again.
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -1417,26 +1422,36 @@ function App() {
                 </form>
               </div>
               <h5 className="u-text u-text-14">
-                Vertaal de tekst hier links naar het Frans en voer de
-                vertaalde tekst hieronder in. Klik vervolgens op 'indienen'.
+                Vertaal de tekst hier links naar het Frans en voer de vertaalde
+                tekst hieronder in. Klik vervolgens op 'indienen'.
               </h5>
+
+              {/* Opdracht 8 */}
               <div className="u-container-style u-custom-color-3 u-group u-group-6">
                 <div className="u-container-layout u-container-layout-6">
                   <h3 className="u-text u-text-default u-text-15">
                     Opdracht 8
                   </h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-16">
-                    Het&nbsp;WK 2022&nbsp;in Qatar wordt het 22e WK voetbal
-                    ooit en het eerste kampioenschap in het Midden-Oosten. Dit
-                    is de meest volledige website over het FIFA
-                    Wereldkampioenschap voetbal 2022 in Qatar.
+                    Het&nbsp;WK 2022&nbsp;in Qatar wordt het 22e WK voetbal ooit
+                    en het eerste kampioenschap in het Midden-Oosten. Dit is de
+                    meest volledige website over het FIFA Wereldkampioenschap
+                    voetbal 2022 in Qatar.
                   </p>
                   <button
                     className="btn btn-primary"
-                    onClick={() => { startListening(3); }}>Start S.T.T.</button>
+                    onClick={() => {
+                      startListening(3);
+                    }}
+                  >
+                    Start S.T.T.
+                  </button>
                   <button
                     className="btn btn-danger"
-                    onClick={() => stopListening()}>Stop S.T.T.</button>
+                    onClick={() => stopListening()}
+                  >
+                    Stop S.T.T.
+                  </button>
                 </div>
               </div>
               <h5 className="u-text u-text-17">
@@ -1485,11 +1500,7 @@ function App() {
                     Unable to send your message. Please fix errors then try
                     again.
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -1497,28 +1508,38 @@ function App() {
                   />
                 </form>
               </div>
+
+              {/* Opdracht 9 */}
               <div className="u-container-style u-custom-color-3 u-group u-group-7">
                 <div className="u-container-layout u-container-layout-7">
                   <h3 className="u-text u-text-default u-text-18">
                     Opdracht 9
                   </h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-19">
-                    Aan het WK nemen 32 landen deel, namelijk gastland Qatar
-                    en 31 landen die zich kwalificeren via de voorronden. Deze
-                    landen worden in groepen geplaatst voor het eindtoernooi
-                    in Qatar.
+                    Aan het WK nemen 32 landen deel, namelijk gastland Qatar en
+                    31 landen die zich kwalificeren via de voorronden. Deze
+                    landen worden in groepen geplaatst voor het eindtoernooi in
+                    Qatar.
                   </p>
                   <button
                     className="btn btn-primary"
-                    onClick={() => { startListening(4); }}>Start S.T.T.</button>
+                    onClick={() => {
+                      startListening(4);
+                    }}
+                  >
+                    Start S.T.T.
+                  </button>
                   <button
                     className="btn btn-danger"
-                    onClick={() => stopListening()}>Stop S.T.T.</button>
+                    onClick={() => stopListening()}
+                  >
+                    Stop S.T.T.
+                  </button>
                 </div>
               </div>
               <h5 className="u-text u-text-20">
-                Vertaal de tekst hier links naar het Turks en voer de
-                vertaalde tekst hieronder in. Klik vervolgens op 'indienen'.
+                Vertaal de tekst hier links naar het Turks en voer de vertaalde
+                tekst hieronder in. Klik vervolgens op 'indienen'.
               </h5>
               <div className="u-form u-form-7">
                 <form
@@ -1562,11 +1583,7 @@ function App() {
                     Unable to send your message. Please fix errors then try
                     again.
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -1574,22 +1591,32 @@ function App() {
                   />
                 </form>
               </div>
+
+              {/* Opdracht 10 */}
               <div className="u-container-style u-custom-color-3 u-group u-group-8">
                 <div className="u-container-layout u-container-layout-8">
                   <h3 className="u-text u-text-default u-text-21">
                     Opdracht 10
                   </h3>
                   <p className="u-large-text u-text u-text-default u-text-variant u-text-22">
-                    Vandaag ga ik met mijn vriendin naar het museum. Een
-                    kaartje kost vijftig. Ik betaal voor het kaartje. Hoeveel
-                    gaat mij dit kosten?
+                    Vandaag ga ik met mijn vriendin naar het museum. Een kaartje
+                    kost vijftig. Ik betaal voor het kaartje. Hoeveel gaat mij
+                    dit kosten?
                   </p>
                   <button
                     className="btn btn-primary"
-                    onClick={() => { startListening(5); }}>Start S.T.T.</button>
+                    onClick={() => {
+                      startListening(5);
+                    }}
+                  >
+                    Start S.T.T.
+                  </button>
                   <button
                     className="btn btn-danger"
-                    onClick={() => stopListening()}>Stop S.T.T.</button>
+                    onClick={() => stopListening()}
+                  >
+                    Stop S.T.T.
+                  </button>
                 </div>
               </div>
               <h5 className="u-text u-text-23">
@@ -1638,11 +1665,7 @@ function App() {
                     Unable to send your message. Please fix errors then try
                     again.
                   </div>
-                  <input
-                    type="hidden"
-                    defaultValue
-                    name="recaptchaResponse"
-                  />
+                  <input type="hidden" defaultValue name="recaptchaResponse" />
                   <input
                     type="hidden"
                     name="formServices"
@@ -1652,7 +1675,13 @@ function App() {
               </div>
             </div>
           </section>
-          <br></br><br></br><br></br> <br></br><br></br><br></br><br></br><br></br>
+          <br></br>
+          <br></br>
+          <br></br> <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
           <section className="u-clearfix u-section-3" id="sec-8f35">
             <div className="u-clearfix u-sheet u-sheet-1">
               <button
