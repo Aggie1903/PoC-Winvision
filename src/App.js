@@ -46,13 +46,13 @@ function App() {
       setquestion2stt(translatedResult.languages.languages.fr);
     }
     if (translatedResult.question === 3) {
-      setquestion3stt(translatedResult.original);
+      setquestion3stt(translatedResult.languages.languages.ja);
     }
     if (translatedResult.question === 4) {
-      setquestion4stt(translatedResult.original);
+      setquestion4stt(translatedResult.languages.languages.tr);
     }
     if (translatedResult.question === 5) {
-      setquestion5stt(translatedResult.original);
+      setquestion5stt(translatedResult.languages.languages.es);
     }
   };
 
