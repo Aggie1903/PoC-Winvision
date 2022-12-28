@@ -1,18 +1,35 @@
 // server.js API 
 
+// Libraries
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
 const express = require('express');
+const bodyParser = require('body-parser');
+const shortid = require('shortid');
+const _ = require('lodash');
+const adapter = new FileSync('db.json');
+const db = low(adapter);
 const app = express();
-const fs = require('fs');
-const cors = require('cors');
 
-app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+    next();
+  });
+
 
 app.post('/api/answers', (req, res) => {
-  const answer = req.body.answer;
-  fs.writeFileSync('answers.js', answer);
-  res.send('Data written to answers.js');
+  var answer = req.body;
+
+  db.get('answer')
+      .push(answer)
+      .write();
+
+  res.send('answer received');
 });
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(3001, () => {
+  console.log('Server listening on port 3001');
+});

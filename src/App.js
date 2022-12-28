@@ -7,35 +7,46 @@ import axios from 'axios';
 
 
 
-function App() {
-  // Required
-  const [answer, setAnswer] = useState('');
-  const [notification, setNotification] = useState('');
-  const handleChange = (event) => {
-    setAnswer(event.target.value);
-  }
 
-  const handleSubmit = () => {
-    axios.post('http://localhost:3000/api/answers', {
-      answer: answer
+function App() {
+// Consts
+// Consts answers
+  const [answer, setAnswer] = useState('');
+  const [questionId, setQuestionId] = useState('');
+  const handleChange = (event) => {setAnswer(event.target.value);}
+  const questionIds = {'Question 1': 1,'Question 2': 2,'Question 3': 3,'Question 4': 4,'Question 5': 5,'Question 6': 6,'Question 7': 7,'Question 8': 8,'Question 9': 9,'Question 10': 10,'Question 11': 11,'Question 12': 12,'Question 13': 13,'Question 14': 14,'Question 15': 15,'Question 16': 16,'Question 17': 17,'Question 18': 18,'Question 19': 19,'Question 20': 20,};
+  const [answer1, setAnswer1] = useState('');const [answer2, setAnswer2] = useState(''); const [answer3, setAnswer3] = useState(''); const [answer4, setAnswer4] = useState(''); const [answer5, setAnswer5] = useState(''); const [answer6, setAnswer6] = useState(''); const [answer7, setAnswer7] = useState('');const [answer8, setAnswer8] = useState('');const [answer9, setAnswer9] = useState('');
+  const [answer10, setAnswer10] = useState('');const [answer11, setAnswer11] = useState('');const [answer12, setAnswer12] = useState('');const [answer13, setAnswer13] = useState('');const [answer14, setAnswer14] = useState('');const [answer15, setAnswer15] = useState('');
+
+  // Consts notification
+  const [success1, setSuccess1] = useState(false); const [success2, setSuccess2] = useState(false); const [success3, setSuccess3] = useState(false); const [success4, setSuccess4] = useState(false); const [success5, setSuccess5] = useState(false); const [success6, setSuccess6] = useState(false); const [success7, setSuccess7] = useState(false); const [success8, setSuccess8] = useState(false); const [success9, setSuccess9] = useState(false);
+  const [success10, setSuccess10] = useState(false); const [success11, setSuccess11] = useState(false); const [success12, setSuccess12] = useState(false); const [success13, setSuccess13] = useState(false); const [success14, setSuccess14] = useState(false); const [success15, setSuccess15] = useState(false); const [success16, setSuccess16] = useState(false); const [success17, setSuccess17] = useState(false); const [success18, setSuccess18] = useState(false); const [success19, setSuccess19] = useState(false);const [success20, setSuccess20] = useState(false);
+
+
+
+  const handleSubmit = (question, answer) => {
+    const questionId = questionIds[question];
+    axios.post('http://localhost:3001/api/answers', {
+      question,
+      answer,
+      questionId,
     })
-    .then(() => {
-      setNotification('Data sent successfully!');
-      setTimeout(() => {
-        setNotification('');
-      }, 3000);
+    .then((res) => {
+      console.log(res);
     })
     .catch((error) => {
-      setNotification('An error occurred: ' + error.message);
-      setTimeout(() => {
-        setNotification('');
-      }, 3000);
-    });
+      console.error(error);
+    });if (question === 'Question 1') {
+      setSuccess1(true);}if (question === 'Question 2') {setSuccess2(true); }if (question === 'Question 3') {setSuccess3(true);}if (question === 'Question 4') {setSuccess4(true); } if (question === 'Question 5') {   setSuccess5(true); }if (question === 'Question 6') {setSuccess6(true);}if (question === 'Question 7') { setSuccess7(true); } if (question === 'Question 8') { setSuccess8(true); }  if (question === 'Question 9') {   setSuccess9(true); } if (question === 'Question 10') {   setSuccess10(true); } if (question === 'Question 11') {   setSuccess11(true); } if (question === 'Question 12') {   setSuccess12(true); } if (question === 'Question 13') {   setSuccess13(true);}
+    if (question === 'Question 14') {
+      setSuccess14(true);}if (question === 'Question 15') { setSuccess15(true); } if (question === 'Question 16') {   setSuccess16(true); } if (question === 'Question 17') {   setSuccess17(true); } if (question === 'Question 18') {   setSuccess18(true); }if (question === 'Question 19') { setSuccess19(true);}if (question === 'Question 20') { setSuccess20(true); }
   }
 
-
+// Keys
   const key = "52e7688fe389462cb78bc868b79af366";
   const region = "westeurope";
+
+  // STT module
   const processResults = (translatedResult) => {
     console.log(translatedResult);
 
@@ -55,7 +66,6 @@ function App() {
       setquestion5stt(translatedResult.languages.languages.es);
     }
   };
-
   const [translator] = useState(new Translator(processResults));
   const [question1stt, setquestion1stt] = useState("");
   const [question2stt, setquestion2stt] = useState("");
@@ -88,7 +98,7 @@ function App() {
     );
   };
 
-  // ALL Questions
+  // TTS Questions
   const question1 =
     "Vandaag liep ik door de stad en ontmoette ik twee mensen. De één had vijf zakken snoep en de ander twintig. Deze lieve mensen waren zo gul dat ze me alle snoepzakjes gaven. Hoeveel zakken snoep heb ik gekregen?";
   const question2 =
@@ -119,7 +129,6 @@ function App() {
 
           <div className="u-container-layout u-container-layout-1">
             <button className="btn1 btn btn-danger btn-lg" style={{position:"relative", left:"40%", top:"40vh" }} onClick={() => setpageState(1)} > Versie 1</button>
-
             <button className="btn2 btn btn-danger btn-lg" style={{position:"relative", left:"50%", top:"40vh" }} onClick={() => setpageState(2)}> Versie 2</button>
           </div>
         </div>
@@ -165,14 +174,19 @@ function App() {
                   className="form-control"
                   rows={3}
                   placeholder="Vul je antwoord hier in!"
-                  value={answer}
-                  onChange={handleChange}
-                />
+                  value={answer1}
+                  onChange={event => setAnswer1(event.target.value)}
+                  />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={handleSubmit} >Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 1', answer1)} >Indienen</button>
               </div>
-              
+
+              {success1 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 2 */}
@@ -198,14 +212,21 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer2}
+                  onChange={event => setAnswer2(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 2', answer2)} >Indienen</button>
               </div>
+              {success2 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
+            
 
             {/* Question 3 */}
             <div
@@ -230,13 +251,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer3}
+                  onChange={event => setAnswer3(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 3', answer3)}>Indienen</button>
               </div>
+              {success3 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 4 */}
@@ -263,13 +290,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer4}
+                  onChange={event => setAnswer4(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 4', answer4)}>Indienen</button>
               </div>
+              {success4 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 5 */}
@@ -298,13 +331,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer5}
+                  onChange={event => setAnswer5(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 5', answer5)}>Indienen</button>
               </div>
+              {success5 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 6 */}
@@ -325,13 +364,19 @@ function App() {
                   className="form-control"
                   style={{height: "15vh"}}
                   rows={3}
-                  defaultValue={""}
                   placeholder="Type de tekst hier over!"
+                  value={answer6}
+                  onChange={event => setAnswer6(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 6', answer6)}>Indienen</button>
               </div>
+              {success6 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 7 */}
@@ -358,13 +403,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer7}
+                  onChange={event => setAnswer7(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 7', answer7)}>Indienen</button>
               </div>
+              {success7 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 8 */}
@@ -391,13 +442,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer8}
+                  onChange={event => setAnswer8(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 8', answer8)}>Indienen</button>
               </div>
+              {success8 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 9 */}
@@ -421,13 +478,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer9}
+                  onChange={event => setAnswer9(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 9', answer9)}>Indienen</button>
               </div>
+              {success9 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 10 */}
@@ -451,13 +514,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer10}
+                  onChange={event => setAnswer10(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 10', answer10)}>Indienen</button>
               </div>
+              {success10 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             <div className="row mt-2">
@@ -516,13 +585,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer11}
+                  onChange={event => setAnswer11(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 11', answer11)}>Indienen</button>
               </div>
+              {success11 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 2 */}
@@ -556,13 +631,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer12}
+                  onChange={event => setAnswer12(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 12', answer12)}>Indienen</button>
               </div>
+              {success12 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 3 */}
@@ -596,13 +677,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer13}
+                  onChange={event => setAnswer13(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 13', answer13)}>Indienen</button>
               </div>
+              {success13 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 4 */}
@@ -636,13 +723,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer14}
+                  onChange={event => setAnswer14(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 14', answer14)}>Indienen</button>
               </div>
+              {success14 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 5 */}
@@ -676,13 +769,19 @@ function App() {
                 <textarea
                   className="form-control"
                   rows={3}
-                  defaultValue={""}
                   placeholder="Vul je antwoord hier in!"
+                  value={answer15}
+                  onChange={event => setAnswer15(event.target.value)}
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 15', answer15)}>Indienen</button>
               </div>
+              {success15 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 6 */}
@@ -712,8 +811,13 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 16', question1stt)}>Indienen</button>
               </div>
+              {success16 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 7 */}
@@ -747,8 +851,13 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 17', question2stt)}>Indienen</button>
               </div>
+              {success17 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 8 */}
@@ -782,8 +891,13 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 18', question3stt)}>Indienen</button>
               </div>
+              {success18 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 9 */}
@@ -820,8 +934,13 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 19', question4stt)}>Indienen</button>
               </div>
+              {success19 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             {/* Question 10 */}
@@ -858,8 +977,13 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25">Indienen</button>
+                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 20', question5stt)}>Indienen</button>
               </div>
+              {success20 && (
+                <div className="alert alert-success mt-2" role="alert">
+                  Antwoord is succesvol verzonden!
+                </div>
+              )}
             </div>
 
             <div className="row mt-2">
@@ -870,6 +994,7 @@ function App() {
           {/* End of Version 2 */}
         </div>
       </>
+
 
       {/* End of App */}
     </div>
