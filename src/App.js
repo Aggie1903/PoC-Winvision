@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Translator } from "./services/translator";
 import { LanguageProvider } from "./providers/languageProvider";
 import { TextToSpeechService } from "./services/textToSpeechService";
-// import axios from 'axios';
+import axios from 'axios';
 
 
 
