@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Translator } from "./services/translator";
 import { LanguageProvider } from "./providers/languageProvider";
 import { TextToSpeechService } from "./services/textToSpeechService";
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
@@ -23,7 +23,7 @@ function App() {
   const [success10, setSuccess10] = useState(false); const [success11, setSuccess11] = useState(false); const [success12, setSuccess12] = useState(false); const [success13, setSuccess13] = useState(false); const [success14, setSuccess14] = useState(false); const [success15, setSuccess15] = useState(false); const [success16, setSuccess16] = useState(false); const [success17, setSuccess17] = useState(false); const [success18, setSuccess18] = useState(false); const [success19, setSuccess19] = useState(false);const [success20, setSuccess20] = useState(false);
 
 
-
+// Button submit
   const handleSubmit = (question, answer) => {
     const questionId = questionIds[question];
     axios.post('http://localhost:3001/api/answers', {
@@ -170,7 +170,7 @@ function App() {
               </div>
               
               <div className="row mt-2">
-                <textarea
+                <textarea data-testid="textarea1"
                   className="form-control"
                   rows={3}
                   placeholder="Vul je antwoord hier in!"
@@ -179,7 +179,7 @@ function App() {
                   />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 1', answer1)} >Indienen</button>
+                <button className="btn btn-success w-25" data-testid='btn1' onClick={() => handleSubmit('Question 1', answer1)} >Indienen</button>
               </div>
 
               {success1 && (

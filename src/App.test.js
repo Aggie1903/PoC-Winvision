@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent, waitForElement } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders button submittion', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+  const {getAllByTestId} = render(<App />);
+  const textarea = getAllByTestId("textarea1");
+  const button = getAllByTestId('btn1');
+
+  userEvent.type(textarea, 'test');
+  userEvent.click(button);
+  
+  successMessage = waitForElement(() => getByTestId('success-message')).then(successMessage => {
+    expect(successMessage).toBeInTheDocument();
+  });
+  });
