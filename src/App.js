@@ -5,7 +5,6 @@ import { LanguageProvider } from "./providers/languageProvider";
 import { TextToSpeechService } from "./services/textToSpeechService";
 import axios from 'axios';
 
-
 function App() {
   // Consts
   // Consts answers
