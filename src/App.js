@@ -4,6 +4,7 @@ import { Translator } from "./services/translator";
 import { LanguageProvider } from "./providers/languageProvider";
 import { TextToSpeechService } from "./services/textToSpeechService";
 import axios from 'axios';
+import Version1Question from './Version1Question';
 
 function App() {
   // Consts
@@ -145,386 +146,124 @@ function App() {
 
           {/* Question 1 */}
           <div className="container m-3 p-3">
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 1</h4>
-                <h5>
-                  Vind het antwoord in de tekst hieronder en klik daarna op
-                  indienen.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>
-                  Hoje eu estava andando pela cidade e encontrei duas pessoas.
-                  Um tinha cem euros e o outro tinha vinte euros. Essas pessoas
-                  adoráveis ​foram tão generosas que me deram todo o dinheiro.
-                  Quantos euros recebi?
-                </p>
-              </div>
-
-              <div className="row mt-2">
-                <textarea data-testid="textarea1"
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer1}
-                  onChange={event => setAnswer1(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" data-testid='btn1' onClick={() => handleSubmit('Question 1', answer1)} >Indienen</button>
-              </div>
-
-              {success1 && (
-                <div className="alert alert-success mt-2" data-testid='success-message1' role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 1"}
+              titleid={1}
+              assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
+              question={"Hoje eu estava andando pela cidade e encontrei duas pessoas. Um tinha cem euros e o outro tinha vinte euros. Essas pessoas adoráveis ​foram tão generosas que me deram todo o dinheiro. Quantos euros recebi?"}
+              nquestion={"Question 1"}
+              textareaid={1}
+              btnid={1}
+              succesid={1}
+              handleSubmit={handleSubmit}
+              success={success1} />
 
             {/* Question 2 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 2</h4>
-                <h5>
-                  Vind het antwoord in de tekst hieronder en klik daarna op
-                  indienen.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>
-                  Je suis musicien et j'ai gagné cinquante euros hier. Et
-                  aujourd'hui j'en ai fait cent. Combien d'euros ai-je gagné ?
-                </p>
-              </div>
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer2}
-                  onChange={event => setAnswer2(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 2', answer2)} >Indienen</button>
-              </div>
-              {success2 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
-
+            <Version1Question
+              title={"Opdracht 2"}
+              assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
+              question={"Je suis musicien et j'ai gagné cinquante euros hier. Et aujourd'hui j'en ai fait cent. Combien d'euros ai-je gagné ?"}
+              nquestion={"Question 2"}
+              textareaid={2}
+              btnid={2}
+              succesid={2}
+              handleSubmit={handleSubmit}
+              success={success2} />
 
             {/* Question 3 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 3</h4>
-                <h5>
-                  Vind het antwoord in de tekst hieronder en klik daarna op
-                  indienen.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>
-                  Το στεγαστικό μου αυτό το μήνα είναι τετρακόσια ευρώ. Πόσο
-                  είναι για μένα μια δίμηνη υποθήκη;
-                </p>
-              </div>
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer3}
-                  onChange={event => setAnswer3(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 3', answer3)}>Indienen</button>
-              </div>
-              {success3 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 3"}
+              assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
+              question={"Το στεγαστικό μου αυτό το μήνα είναι τετρακόσια ευρώ. Πόσο είναι για μένα μια δίμηνη υποθήκη;"}
+              nquestion={"Question 3"}
+              textareaid={3}
+              btnid={3}
+              succesid={3}
+              handleSubmit={handleSubmit}
+              success={success3} />
 
             {/* Question 4 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 4</h4>
-                <h5>
-                  Vind het antwoord in de tekst hieronder en klik daarna op
-                  indienen.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>
-                  Bugün kız arkadaşımla müzeye gideceğim. bir biletin fiyatı
-                  elli. Biletleri ödüyorum. Bu bana ne kadara mal olacak?
-                </p>
-              </div>
-
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer4}
-                  onChange={event => setAnswer4(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 4', answer4)}>Indienen</button>
-              </div>
-              {success4 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 4"}
+              assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
+              question={"Bugün kız arkadaşımla müzeye gideceğim. bir biletin fiyatı elli. Biletleri ödüyorum. Bu bana ne kadara mal olacak?"}
+              nquestion={"Question 4"}
+              textareaid={4}
+              btnid={4}
+              succesid={4}
+              handleSubmit={handleSubmit}
+              success={success4} />
 
             {/* Question 5 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 5</h4>
-                <h5>
-                  Vind het antwoord in de tekst hieronder en klik daarna op
-                  indienen.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>
-                  Hoje eu estava andando pela cidade e encontrei duas pessoas.
-                  Um tinha dez euros e o outro também tinha dez euros. Essas
-                  pessoas adoráveis ​​foram tão generosas que me deram todo o
-                  dinheiro. Quantos euros recebi?
-                </p>
-              </div>
-
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer5}
-                  onChange={event => setAnswer5(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 5', answer5)}>Indienen</button>
-              </div>
-              {success5 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 5"}
+              assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
+              question={"Hoje eu estava andando pela cidade e encontrei duas pessoas. Um tinha dez euros e o outro também tinha dez euros. Essas pessoas adoráveis ​​foram tão generosas que me deram todo o dinheiro. Quantos euros recebi?"}
+              nquestion={"Question 5"}
+              textareaid={5}
+              btnid={5}
+              succesid={5}
+              handleSubmit={handleSubmit}
+              success={success5} />
 
             {/* Question 6 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 6</h4>
-                <h5>
-                  Zorg dat de tekst die je op het A4-tje hebt gekregen in het
-                  vak Hieronder komt te staan en klik op "Indienen"
-                </h5>
-              </div>
-
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  style={{ height: "15vh" }}
-                  rows={3}
-                  placeholder="Type de tekst hier over!"
-                  value={answer6}
-                  onChange={event => setAnswer6(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 6', answer6)}>Indienen</button>
-              </div>
-              {success6 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 6"}
+              assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
+              nquestion={"Question 6"}
+              textareaid={6}
+              btnid={6}
+              succesid={6}
+              handleSubmit={handleSubmit}
+              success={success6} />
 
             {/* Question 7 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 7</h4>
-                <h5>
-                  Vertaal de tekst naar het Turks en voer de vertaalde tekst
-                  hieronder in. Klik vervolgens op 'indienen'.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>
-                  Vanavond zal het ook in Limburg overgaan op lichte regen, net
-                  als in de rest van het land.
-                </p>
-              </div>
-
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer7}
-                  onChange={event => setAnswer7(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 7', answer7)}>Indienen</button>
-              </div>
-              {success7 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 7"}
+              assignment={"Vertaal de tekst naar het Turks en voer de vertaalde tekst hieronder in. Klik vervolgens op 'indienen'."}
+              question={"Vanavond zal het ook in Limburg overgaan op lichte regen, net als in de rest van het land."}
+              nquestion={"Question 7"}
+              textareaid={7}
+              btnid={7}
+              succesid={7}
+              handleSubmit={handleSubmit}
+              success={success7} />
 
             {/* Question 8 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 8</h4>
-                <h5>
-                  Vertaal de tekst naar het Turks en voer de vertaalde tekst
-                  hieronder in. Klik vervolgens op 'indienen'.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>
-                  Het&nbsp;WK 2022&nbsp;in Qatar wordt het 22e WK voetbal ooit
-                  en het eerste kampioenschap in het Midden-Oosten..
-                </p>
-              </div>
-
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer8}
-                  onChange={event => setAnswer8(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 8', answer8)}>Indienen</button>
-              </div>
-              {success8 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 7"}
+              assignment={"Vertaal de tekst naar het Turks en voer de vertaalde tekst hieronder in. Klik vervolgens op 'indienen'."}
+              question={"Het WK 2022 in Qatar wordt het 22e WK voetbal ooit en het eerste kampioenschap in het Midden-Oosten."}
+              nquestion={"Question 8"}
+              textareaid={8}
+              btnid={8}
+              succesid={8}
+              handleSubmit={handleSubmit}
+              success={success8} />
 
             {/* Question 9 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 9</h4>
-                <h5>
-                  Vertaal de tekst naar het Roemeens en voer de vertaalde tekst
-                  hieronder in. Klik vervolgens op 'indienen'.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>Mijn naam is Ahmetcan en ik ben 21 jaar oud.</p>
-              </div>
-
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer9}
-                  onChange={event => setAnswer9(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 9', answer9)}>Indienen</button>
-              </div>
-              {success9 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 9"}
+              assignment={"Vertaal de tekst naar het Roemeens en voer de vertaalde tekst hieronder in. Klik vervolgens op 'indienen'."}
+              question={"Mijn naam is Ahmetcan en ik ben 21 jaar oud."}
+              nquestion={"Question 9"}
+              textareaid={9}
+              btnid={9}
+              succesid={9}
+              handleSubmit={handleSubmit}
+              success={success9} />
 
             {/* Question 10 */}
-            <div
-              className="row mb-4 p-4"
-              style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
-            >
-              <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">Opdracht 10</h4>
-                <h5>
-                  Vertaal de tekst naar het Spaans en voer de vertaalde tekst
-                  hieronder in. Klik vervolgens op 'indienen'.
-                </h5>
-              </div>
-
-              <div className="row">
-                <p>Vandaag ga ik met mijn vriendin naar het museum.</p>
-              </div>
-
-              <div className="row mt-2">
-                <textarea
-                  className="form-control"
-                  rows={3}
-                  placeholder="Vul je antwoord hier in!"
-                  value={answer10}
-                  onChange={event => setAnswer10(event.target.value)}
-                />
-              </div>
-              <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 10', answer10)}>Indienen</button>
-              </div>
-              {success10 && (
-                <div className="alert alert-success mt-2" role="alert">
-                  Antwoord is succesvol verzonden!
-                </div>
-              )}
-            </div>
+            <Version1Question
+              title={"Opdracht 10"}
+              assignment={"Vertaal de tekst naar het Spaans en voer de vertaalde tekst hieronder in. Klik vervolgens op 'indienen'."}
+              question={"Vandaag ga ik met mijn vriendin naar het museum."}
+              nquestion={"Question 10"}
+              textareaid={10}
+              btnid={10}
+              succesid={10}
+              handleSubmit={handleSubmit}
+              success={success10} />
 
             <div className="row mt-2">
               <button className="btn btn-primary" style={{ width: "6%", position: "fixed", bottom: "20px", right: "16px" }} onClick={() => setpageState(0)}>Home</button>
