@@ -3,27 +3,23 @@ import { useState } from "react";
 import { Translator } from "./services/translator";
 import { LanguageProvider } from "./providers/languageProvider";
 import { TextToSpeechService } from "./services/textToSpeechService";
-// import axios from 'axios';
-
-
+import axios from 'axios';
 
 
 function App() {
-// Consts
-// Consts answers
+  // Consts
+  // Consts answers
   const [answer, setAnswer] = useState('');
-  const [questionId, setQuestionId] = useState('');
-  const handleChange = (event) => {setAnswer(event.target.value);}
-  const questionIds = {'Question 1': 1,'Question 2': 2,'Question 3': 3,'Question 4': 4,'Question 5': 5,'Question 6': 6,'Question 7': 7,'Question 8': 8,'Question 9': 9,'Question 10': 10,'Question 11': 11,'Question 12': 12,'Question 13': 13,'Question 14': 14,'Question 15': 15,'Question 16': 16,'Question 17': 17,'Question 18': 18,'Question 19': 19,'Question 20': 20,};
-  const [answer1, setAnswer1] = useState('');const [answer2, setAnswer2] = useState(''); const [answer3, setAnswer3] = useState(''); const [answer4, setAnswer4] = useState(''); const [answer5, setAnswer5] = useState(''); const [answer6, setAnswer6] = useState(''); const [answer7, setAnswer7] = useState('');const [answer8, setAnswer8] = useState('');const [answer9, setAnswer9] = useState('');
-  const [answer10, setAnswer10] = useState('');const [answer11, setAnswer11] = useState('');const [answer12, setAnswer12] = useState('');const [answer13, setAnswer13] = useState('');const [answer14, setAnswer14] = useState('');const [answer15, setAnswer15] = useState('');
+  const questionIds = { 'Question 1': 1, 'Question 2': 2, 'Question 3': 3, 'Question 4': 4, 'Question 5': 5, 'Question 6': 6, 'Question 7': 7, 'Question 8': 8, 'Question 9': 9, 'Question 10': 10, 'Question 11': 11, 'Question 12': 12, 'Question 13': 13, 'Question 14': 14, 'Question 15': 15, 'Question 16': 16, 'Question 17': 17, 'Question 18': 18, 'Question 19': 19, 'Question 20': 20, };
+  const [answer1, setAnswer1] = useState(''); const [answer2, setAnswer2] = useState(''); const [answer3, setAnswer3] = useState(''); const [answer4, setAnswer4] = useState(''); const [answer5, setAnswer5] = useState(''); const [answer6, setAnswer6] = useState(''); const [answer7, setAnswer7] = useState(''); const [answer8, setAnswer8] = useState(''); const [answer9, setAnswer9] = useState('');
+  const [answer10, setAnswer10] = useState(''); const [answer11, setAnswer11] = useState(''); const [answer12, setAnswer12] = useState(''); const [answer13, setAnswer13] = useState(''); const [answer14, setAnswer14] = useState(''); const [answer15, setAnswer15] = useState('');
 
   // Consts notification
   const [success1, setSuccess1] = useState(false); const [success2, setSuccess2] = useState(false); const [success3, setSuccess3] = useState(false); const [success4, setSuccess4] = useState(false); const [success5, setSuccess5] = useState(false); const [success6, setSuccess6] = useState(false); const [success7, setSuccess7] = useState(false); const [success8, setSuccess8] = useState(false); const [success9, setSuccess9] = useState(false);
-  const [success10, setSuccess10] = useState(false); const [success11, setSuccess11] = useState(false); const [success12, setSuccess12] = useState(false); const [success13, setSuccess13] = useState(false); const [success14, setSuccess14] = useState(false); const [success15, setSuccess15] = useState(false); const [success16, setSuccess16] = useState(false); const [success17, setSuccess17] = useState(false); const [success18, setSuccess18] = useState(false); const [success19, setSuccess19] = useState(false);const [success20, setSuccess20] = useState(false);
+  const [success10, setSuccess10] = useState(false); const [success11, setSuccess11] = useState(false); const [success12, setSuccess12] = useState(false); const [success13, setSuccess13] = useState(false); const [success14, setSuccess14] = useState(false); const [success15, setSuccess15] = useState(false); const [success16, setSuccess16] = useState(false); const [success17, setSuccess17] = useState(false); const [success18, setSuccess18] = useState(false); const [success19, setSuccess19] = useState(false); const [success20, setSuccess20] = useState(false);
 
 
-// Button submit
+  // Button submit
   const handleSubmit = (question, answer) => {
     const questionId = questionIds[question];
     axios.post('http://localhost:3001/api/answers', {
@@ -31,18 +27,20 @@ function App() {
       answer,
       questionId,
     })
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((error) => {
-      console.error(error);
-    });if (question === 'Question 1') {
-      setSuccess1(true);}if (question === 'Question 2') {setSuccess2(true); }if (question === 'Question 3') {setSuccess3(true);}if (question === 'Question 4') {setSuccess4(true); } if (question === 'Question 5') {   setSuccess5(true); }if (question === 'Question 6') {setSuccess6(true);}if (question === 'Question 7') { setSuccess7(true); } if (question === 'Question 8') { setSuccess8(true); }  if (question === 'Question 9') {   setSuccess9(true); } if (question === 'Question 10') {   setSuccess10(true); } if (question === 'Question 11') {   setSuccess11(true); } if (question === 'Question 12') {   setSuccess12(true); } if (question === 'Question 13') {   setSuccess13(true);}
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.error(error);
+      }); if (question === 'Question 1') {
+        setSuccess1(true);
+      } if (question === 'Question 2') { setSuccess2(true); } if (question === 'Question 3') { setSuccess3(true); } if (question === 'Question 4') { setSuccess4(true); } if (question === 'Question 5') { setSuccess5(true); } if (question === 'Question 6') { setSuccess6(true); } if (question === 'Question 7') { setSuccess7(true); } if (question === 'Question 8') { setSuccess8(true); } if (question === 'Question 9') { setSuccess9(true); } if (question === 'Question 10') { setSuccess10(true); } if (question === 'Question 11') { setSuccess11(true); } if (question === 'Question 12') { setSuccess12(true); } if (question === 'Question 13') { setSuccess13(true); }
     if (question === 'Question 14') {
-      setSuccess14(true);}if (question === 'Question 15') { setSuccess15(true); } if (question === 'Question 16') {   setSuccess16(true); } if (question === 'Question 17') {   setSuccess17(true); } if (question === 'Question 18') {   setSuccess18(true); }if (question === 'Question 19') { setSuccess19(true);}if (question === 'Question 20') { setSuccess20(true); }
+      setSuccess14(true);
+    } if (question === 'Question 15') { setSuccess15(true); } if (question === 'Question 16') { setSuccess16(true); } if (question === 'Question 17') { setSuccess17(true); } if (question === 'Question 18') { setSuccess18(true); } if (question === 'Question 19') { setSuccess19(true); } if (question === 'Question 20') { setSuccess20(true); }
   }
 
-// Keys
+  // Keys
   const key = "52e7688fe389462cb78bc868b79af366";
   const region = "westeurope";
 
@@ -94,7 +92,7 @@ function App() {
         region: region,
       },
       text
-      
+
     );
   };
 
@@ -111,7 +109,7 @@ function App() {
     "Vandaag heb ik voor zeventig euro gewinkeld en voor twintig euro gegeten. Hoeveel heb ik vandaag uitgegeven?";
 
 
-    
+
   // View UI
   return (
     <div className="App">
@@ -128,8 +126,8 @@ function App() {
           </nav>
 
           <div className="u-container-layout u-container-layout-1">
-            <button className="btn1 btn btn-danger btn-lg" style={{position:"relative", left:"40%", top:"40vh" }} onClick={() => setpageState(1)} > Versie 1</button>
-            <button className="btn2 btn btn-danger btn-lg" style={{position:"relative", left:"50%", top:"40vh" }} onClick={() => setpageState(2)}> Versie 2</button>
+            <button className="btn1 btn btn-danger btn-lg" style={{ position: "relative", left: "40%", top: "40vh" }} onClick={() => setpageState(1)} > Versie 1</button>
+            <button className="btn2 btn btn-danger btn-lg" style={{ position: "relative", left: "50%", top: "40vh" }} onClick={() => setpageState(2)}> Versie 2</button>
           </div>
         </div>
       </>
@@ -168,7 +166,7 @@ function App() {
                   Quantos euros recebi?
                 </p>
               </div>
-              
+
               <div className="row mt-2">
                 <textarea data-testid="textarea1"
                   className="form-control"
@@ -176,14 +174,14 @@ function App() {
                   placeholder="Vul je antwoord hier in!"
                   value={answer1}
                   onChange={event => setAnswer1(event.target.value)}
-                  />
+                />
               </div>
               <div className="row mt-2">
                 <button className="btn btn-success w-25" data-testid='btn1' onClick={() => handleSubmit('Question 1', answer1)} >Indienen</button>
               </div>
 
               {success1 && (
-                <div className="alert alert-success mt-2" role="alert">
+                <div className="alert alert-success mt-2" data-testid='success-message1' role="alert">
                   Antwoord is succesvol verzonden!
                 </div>
               )}
@@ -226,7 +224,7 @@ function App() {
                 </div>
               )}
             </div>
-            
+
 
             {/* Question 3 */}
             <div
@@ -362,7 +360,7 @@ function App() {
               <div className="row mt-2">
                 <textarea
                   className="form-control"
-                  style={{height: "15vh"}}
+                  style={{ height: "15vh" }}
                   rows={3}
                   placeholder="Type de tekst hier over!"
                   value={answer6}
@@ -530,7 +528,7 @@ function App() {
             </div>
 
             <div className="row mt-2">
-              <button className="btn btn-primary" style={{width: "6%", position: "fixed", bottom:"20px", right:"16px"}} onClick={() => setpageState(0)}>Home</button>
+              <button className="btn btn-primary" style={{ width: "6%", position: "fixed", bottom: "20px", right: "16px" }} onClick={() => setpageState(0)}>Home</button>
             </div>
 
             {/* End of container */}
@@ -797,17 +795,19 @@ function App() {
                 </h5>
               </div>
               <div className="row mt-3">
-                <button className="btn btn-primary" style={{width:"25%"}} onClick={() => {startListening(1);}}>Start S.T.T.</button>
+                <button className="btn btn-primary" style={{ width: "25%" }} onClick={() => { startListening(1); }}>Start S.T.T.</button>
                 <br></br>
-                <button className="btn btn-danger" style={{width:"25%"}} onClick={() => stopListening()}>Stop S.T.T.</button>
+                <button className="btn btn-danger" style={{ width: "25%" }} onClick={() => stopListening()}>Stop S.T.T.</button>
               </div>
               <div className="row mt-2">
                 <textarea
                   className="form-control"
-                  style={{height: "15vh"}}
+                  style={{ height: "15vh" }}
                   rows={3}
                   placeholder="Type de tekst hier over!"
                   value={question1stt}
+                  readOnly={true}
+                  disabled
                 />
               </div>
               <div className="row mt-2">
@@ -838,9 +838,9 @@ function App() {
               </div>
 
               <div className="row mt-3">
-                <button className="btn btn-primary" style={{width:"25%"}} onClick={() => {startListening(2);}}>Start S.T.T.</button>
+                <button className="btn btn-primary" style={{ width: "25%" }} onClick={() => { startListening(2); }}>Start S.T.T.</button>
                 <br></br>
-                <button className="btn btn-danger" style={{width:"25%"}} onClick={() => stopListening()}>Stop S.T.T.</button>
+                <button className="btn btn-danger" style={{ width: "25%" }} onClick={() => stopListening()}>Stop S.T.T.</button>
               </div>
               <div className="row mt-2">
                 <textarea
@@ -848,6 +848,8 @@ function App() {
                   rows={3}
                   placeholder="Type de tekst hier over!"
                   value={question2stt}
+                  readOnly={true}
+                  disabled
                 />
               </div>
               <div className="row mt-2">
@@ -878,9 +880,9 @@ function App() {
               </div>
 
               <div className="row mt-3">
-                <button className="btn btn-primary" style={{width:"25%"}} onClick={() => {startListening(3);}}>Start S.T.T.</button>
+                <button className="btn btn-primary" style={{ width: "25%" }} onClick={() => { startListening(3); }}>Start S.T.T.</button>
                 <br></br>
-                <button className="btn btn-danger" style={{width:"25%"}} onClick={() => stopListening()}>Stop S.T.T.</button>
+                <button className="btn btn-danger" style={{ width: "25%" }} onClick={() => stopListening()}>Stop S.T.T.</button>
               </div>
               <div className="row mt-2">
                 <textarea
@@ -888,6 +890,8 @@ function App() {
                   rows={3}
                   placeholder="Type de tekst hier over!"
                   value={question3stt}
+                  readOnly={true}
+                  disabled
                 />
               </div>
               <div className="row mt-2">
@@ -921,9 +925,9 @@ function App() {
               </div>
 
               <div className="row mt-3">
-                <button className="btn btn-primary" style={{width:"25%"}} onClick={() => {startListening(4);}}>Start S.T.T.</button>
+                <button className="btn btn-primary" style={{ width: "25%" }} onClick={() => { startListening(4); }}>Start S.T.T.</button>
                 <br></br>
-                <button className="btn btn-danger" style={{width:"25%"}} onClick={() => stopListening()}>Stop S.T.T.</button>
+                <button className="btn btn-danger" style={{ width: "25%" }} onClick={() => stopListening()}>Stop S.T.T.</button>
               </div>
               <div className="row mt-2">
                 <textarea
@@ -931,6 +935,8 @@ function App() {
                   rows={3}
                   placeholder="Type de tekst hier over!"
                   value={question4stt}
+                  readOnly={true}
+                  disabled
                 />
               </div>
               <div className="row mt-2">
@@ -964,9 +970,9 @@ function App() {
               </div>
 
               <div className="row mt-3">
-                <button className="btn btn-primary" style={{width:"25%"}} onClick={() => {startListening(5);}}>Start S.T.T.</button>
+                <button className="btn btn-primary" style={{ width: "25%" }} onClick={() => { startListening(5); }}>Start S.T.T.</button>
                 <br></br>
-                <button className="btn btn-danger" style={{width:"25%"}} onClick={() => stopListening()}>Stop S.T.T.</button>
+                <button className="btn btn-danger" style={{ width: "25%" }} onClick={() => stopListening()}>Stop S.T.T.</button>
               </div>
               <div className="row mt-2">
                 <textarea
@@ -974,6 +980,8 @@ function App() {
                   rows={3}
                   placeholder="Type de tekst hier over!"
                   value={question5stt}
+                  readOnly={true}
+                  disabled
                 />
               </div>
               <div className="row mt-2">
@@ -987,7 +995,7 @@ function App() {
             </div>
 
             <div className="row mt-2">
-              <button className="btn btn-primary" style={{width: "6%", position: "fixed", bottom:"20px", right:"16px"}} onClick={() => setpageState(0)}>Home</button>
+              <button className="btn btn-primary" style={{ width: "6%", position: "fixed", bottom: "20px", right: "16px" }} onClick={() => setpageState(0)}>Home</button>
             </div>
             {/* End of container */}
           </div>
@@ -998,7 +1006,7 @@ function App() {
 
       {/* End of App */}
     </div>
-    
+
   );
 }
 

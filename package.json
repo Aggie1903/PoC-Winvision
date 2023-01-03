@@ -49,5 +49,10 @@
   "devDependencies": {
     "@testing-library/user-event": "^14.4.3",
     "jest": "^27.5.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   }
 }
