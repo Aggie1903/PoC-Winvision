@@ -9,9 +9,10 @@ export default function Version1Question(props) {
             className="row mb-4 p-4"
             style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
         >
-            <div className="row d-flex justify-content-start">
-                <h4 className="pe-0">{props.title} data-testid={`title${props.titleid}`}</h4>
+            <div className="row d-flex justify-content-start" data-testid={`title${props.titleid}`}>
+                <h4 className="pe-0">{props.title} </h4>
                 <h5>
+                    
                     {props.assignment}
                 </h5>
             </div>

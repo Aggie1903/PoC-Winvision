@@ -161,6 +161,7 @@ function App() {
             {/* Question 2 */}
             <Version1Question
               title={"Opdracht 2"}
+              titleid={2}
               assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
               question={"Je suis musicien et j'ai gagné cinquante euros hier. Et aujourd'hui j'en ai fait cent. Combien d'euros ai-je gagné ?"}
               nquestion={"Question 2"}
@@ -173,6 +174,7 @@ function App() {
             {/* Question 3 */}
             <Version1Question
               title={"Opdracht 3"}
+              titleid={3}
               assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
               question={"Το στεγαστικό μου αυτό το μήνα είναι τετρακόσια ευρώ. Πόσο είναι για μένα μια δίμηνη υποθήκη;"}
               nquestion={"Question 3"}
@@ -185,6 +187,7 @@ function App() {
             {/* Question 4 */}
             <Version1Question
               title={"Opdracht 4"}
+              titleid={4}
               assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
               question={"Bugün kız arkadaşımla müzeye gideceğim. bir biletin fiyatı elli. Biletleri ödüyorum. Bu bana ne kadara mal olacak?"}
               nquestion={"Question 4"}
@@ -197,6 +200,7 @@ function App() {
             {/* Question 5 */}
             <Version1Question
               title={"Opdracht 5"}
+              titleid={5}
               assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
               question={"Hoje eu estava andando pela cidade e encontrei duas pessoas. Um tinha dez euros e o outro também tinha dez euros. Essas pessoas adoráveis ​​foram tão generosas que me deram todo o dinheiro. Quantos euros recebi?"}
               nquestion={"Question 5"}
@@ -209,6 +213,7 @@ function App() {
             {/* Question 6 */}
             <Version1Question
               title={"Opdracht 6"}
+              titleid={6}
               assignment={"Vind het antwoord in de tekst hieronder en klik daarna op indienen."}
               nquestion={"Question 6"}
               textareaid={6}
@@ -220,6 +225,7 @@ function App() {
             {/* Question 7 */}
             <Version1Question
               title={"Opdracht 7"}
+              titleid={7}
               assignment={"Vertaal de tekst naar het Turks en voer de vertaalde tekst hieronder in. Klik vervolgens op 'indienen'."}
               question={"Vanavond zal het ook in Limburg overgaan op lichte regen, net als in de rest van het land."}
               nquestion={"Question 7"}
@@ -231,7 +237,8 @@ function App() {
 
             {/* Question 8 */}
             <Version1Question
-              title={"Opdracht 7"}
+              title={"Opdracht 8"}
+              titleid={8}
               assignment={"Vertaal de tekst naar het Turks en voer de vertaalde tekst hieronder in. Klik vervolgens op 'indienen'."}
               question={"Het WK 2022 in Qatar wordt het 22e WK voetbal ooit en het eerste kampioenschap in het Midden-Oosten."}
               nquestion={"Question 8"}
@@ -244,6 +251,7 @@ function App() {
             {/* Question 9 */}
             <Version1Question
               title={"Opdracht 9"}
+              titleid={9}
               assignment={"Vertaal de tekst naar het Roemeens en voer de vertaalde tekst hieronder in. Klik vervolgens op 'indienen'."}
               question={"Mijn naam is Ahmetcan en ik ben 21 jaar oud."}
               nquestion={"Question 9"}
@@ -256,6 +264,7 @@ function App() {
             {/* Question 10 */}
             <Version1Question
               title={"Opdracht 10"}
+              titleid={10}
               assignment={"Vertaal de tekst naar het Spaans en voer de vertaalde tekst hieronder in. Klik vervolgens op 'indienen'."}
               question={"Vandaag ga ik met mijn vriendin naar het museum."}
               nquestion={"Question 10"}
@@ -293,7 +302,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title11">
                 <h4 className="pe-0">Opdracht 1</h4>
                 <h5>
                   Vind het antwoord in de tekst hieronder en klik daarna op
@@ -319,6 +328,7 @@ function App() {
               </div>
               <div className="row mt-2">
                 <textarea
+                  data-testid= {"textarea11"}
                   className="form-control"
                   rows={3}
                   placeholder="Vul je antwoord hier in!"
@@ -327,10 +337,10 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 11', answer11)}>Indienen</button>
+                <button className="btn btn-success w-25" data-testid={"btn11"} onClick={() => handleSubmit('Question 11', answer11)}>Indienen</button>
               </div>
               {success11 && (
-                <div className="alert alert-success mt-2" role="alert">
+                <div className="alert alert-success mt-2" data-testid={"success-message11"} role="alert">
                   Antwoord is succesvol verzonden!
                 </div>
               )}
@@ -341,7 +351,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title12">
                 <h4 className="pe-0">Opdracht 2</h4>
                 <h5>
                   Vind het antwoord in de tekst hieronder en klik daarna op
@@ -365,6 +375,7 @@ function App() {
               </div>
               <div className="row mt-2">
                 <textarea
+                  data-testid= {"textarea12"}
                   className="form-control"
                   rows={3}
                   placeholder="Vul je antwoord hier in!"
@@ -373,10 +384,10 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 12', answer12)}>Indienen</button>
+                <button className="btn btn-success w-25" data-testid={"btn12"} onClick={() => handleSubmit('Question 12', answer12)}>Indienen</button>
               </div>
               {success12 && (
-                <div className="alert alert-success mt-2" role="alert">
+                <div className="alert alert-success mt-2" data-testid={"success-message12"} role="alert">
                   Antwoord is succesvol verzonden!
                 </div>
               )}
@@ -387,7 +398,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title13">
                 <h4 className="pe-0">Opdracht 3</h4>
                 <h5>
                   Vind het antwoord in de tekst hieronder en klik daarna op
@@ -411,6 +422,7 @@ function App() {
               </div>
               <div className="row mt-2">
                 <textarea
+                data-testid= {"textarea13"}
                   className="form-control"
                   rows={3}
                   placeholder="Vul je antwoord hier in!"
@@ -419,10 +431,10 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 13', answer13)}>Indienen</button>
+                <button className="btn btn-success w-25" data-testid={"btn13"} onClick={() => handleSubmit('Question 13', answer13)}>Indienen</button>
               </div>
               {success13 && (
-                <div className="alert alert-success mt-2" role="alert">
+                <div className="alert alert-success mt-2" data-testid={"success-message13"} role="alert">
                   Antwoord is succesvol verzonden!
                 </div>
               )}
@@ -433,7 +445,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title14">
                 <h4 className="pe-0">Opdracht 4</h4>
                 <h5>
                   Vind het antwoord in de tekst hieronder en klik daarna op
@@ -457,6 +469,7 @@ function App() {
               </div>
               <div className="row mt-2">
                 <textarea
+                   data-testid= {"textarea14"}
                   className="form-control"
                   rows={3}
                   placeholder="Vul je antwoord hier in!"
@@ -465,10 +478,10 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 14', answer14)}>Indienen</button>
+                <button className="btn btn-success w-25" data-testid={"btn14"} onClick={() => handleSubmit('Question 14', answer14)}>Indienen</button>
               </div>
               {success14 && (
-                <div className="alert alert-success mt-2" role="alert">
+                <div className="alert alert-success mt-2" data-testid={"success-message14"} role="alert">
                   Antwoord is succesvol verzonden!
                 </div>
               )}
@@ -479,7 +492,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title15">
                 <h4 className="pe-0">Opdracht 5</h4>
                 <h5>
                   Vind het antwoord in de tekst hieronder en klik daarna op
@@ -503,6 +516,7 @@ function App() {
               </div>
               <div className="row mt-2">
                 <textarea
+                   data-testid= {"textarea15"}
                   className="form-control"
                   rows={3}
                   placeholder="Vul je antwoord hier in!"
@@ -511,10 +525,10 @@ function App() {
                 />
               </div>
               <div className="row mt-2">
-                <button className="btn btn-success w-25" onClick={() => handleSubmit('Question 15', answer15)}>Indienen</button>
+                <button className="btn btn-success w-25" data-testid={"btn15"} onClick={() => handleSubmit('Question 15', answer15)}>Indienen</button>
               </div>
               {success15 && (
-                <div className="alert alert-success mt-2" role="alert">
+                <div className="alert alert-success mt-2" data-testid={"success-message15"} role="alert">
                   Antwoord is succesvol verzonden!
                 </div>
               )}
@@ -525,7 +539,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title16">
                 <h4 className="pe-0">Opdracht 6</h4>
                 <h5>
                   Zorg dat de tekst die je op het A4-tje hebt gekregen in het
@@ -563,7 +577,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title17">
                 <h4 className="pe-0">Opdracht 7</h4>
                 <h5>
                   Vertaal de tekst naar het Frans en voer de vertaalde tekst
@@ -605,7 +619,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title18">
                 <h4 className="pe-0">Opdracht 8</h4>
                 <h5>
                   Vertaal de tekst naar het Japans en voer de vertaalde tekst
@@ -647,7 +661,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title19">
                 <h4 className="pe-0">Opdracht 9</h4>
                 <h5>
                   Vertaal de tekst naar het Turks en voer de vertaalde tekst
@@ -692,7 +706,7 @@ function App() {
               className="row mb-4 p-4"
               style={{ backgroundColor: "rgba(234,241,238,255)", width: "75%" }}
             >
-              <div className="row d-flex justify-content-start">
+              <div className="row d-flex justify-content-start" data-testid="title20">
                 <h4 className="pe-0">Opdracht 10</h4>
                 <h5>
                   Vertaal de tekst naar het Spaans en voer de vertaalde tekst
